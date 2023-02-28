@@ -6,8 +6,8 @@
 - [Dashboard](#)
 - [Calendario](#)
 - [Criar evento](#criação-de-evento)
-- [Listar evento](#alterar-evento)
-- [Alterar evento](#alterar-evento)
+- [Listar evento](#mostrar-evento)
+- [Alterar evento](#atualizar-evento)
 - [Apagar evento](#deletar-evento)
 
 ---
