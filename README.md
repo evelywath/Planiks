@@ -2,75 +2,117 @@
 #### Sua aplicação de gestão de tarefas e planejamento.
 
 
-### ENDPOINTS
- 
-- Dashboard
-- Meu Calendário
-- Criar (evento, tag, to-do, categoria, comentário, progresso)
--  Editar (evento, tag, to-do, categoria, comentário, progresso)
- - Deletar (?)
-
-<!--- [](#) - [](#)
+## Endpoints 
+- [Dashboard](#)
+- [Calendario](#)
+- [Criar evento](#criação-de-evento)
+- [Listar evento](#alterar-evento)
+- [Alterar evento](#alterar-evento)
+- [Apagar evento](#deletar-evento)
 
 ---
 
-### Cadastro de Despesa
+<!-- POST - CRIAR -->
+### Criação de evento
 
-<!-- Endereço do recurso -->
-`GEt` planiks/api/v1/dashboard
+`POST` planiks/api/v1/evento
 
-<!-- Colocar a versão é importante para compatibilidade  --> 
-**Insira aqui a response
+**Exemplo de Entrada** 
 ```js
 {
-    "": ,
-    "": ,
-    "": ,
-    "": ,
-    "": ''
+    "eventoId": 1,
+    "titulo": "Prova",
+    "tag": 1,
+    "prazo": 07/03/2023,
+    "categoria": "Estudos",
+    "comentario": "vale nota",
+    "progresso": 0
 }
 ```
 
 **Campos da Requisição**
 | Campo | Obrigatório | Tipo  | Descrição |
 |-------|:-------------:|-------|-----------|
-|  |||
-||||
-||||
-||||
-||||
+|titulo |sim            |String| Titulo do evento, pode conter qualquer caractere
+|tag    |sim            |int| Cor relacionada ao evento, tendo apenas uma seleção de cores pré definidas
+|prazo  |sim            |data| Um dia da semana em que o evento ira se finalizar ao enviar uma notificação
+|categoria|sim          |String| Uma categoria atrelada ao evento definido por uma seleção feita pelo usuario.
+|comentario|não         |texto| Uma descrição do evento com no maximo de 250 caracteres.
 
 **Códigos da Resposta**
-|Código|Descrição
+
+|código|descrição
 |-|-
- |
- |
+201 | O evento foi criado com sucesso
+400 | os dados enviados são inválidos
 
 ---
 
-<!--### Detalhar Despesa
+<!-- GET - LISTAR/MOSTRAR -->
+### Mostrar Evento
 
-`GET` nubeck/api/v1/despesa/{id}
+`GET` planiks/api/v1/evento/{id}
 
 **Exemplo de Resposta** 
 ```js
 {
-    "valor": 100,
-    "categoria": {
-        "id": 1,
-        "nome": "lazer"
-    },
-    "conta": {
-        "id": 1,
-        "nome": "itaú",
-    }
-    "data": '2023-01-01',
-    "descricao": 'cinema'
+
 }
 ```
 
 **Códigos da Resposta**
-|Código|Descrição
+
+|código|descrição
 |-|-
-200 | Os dados da despesa foram retornados
-404 | Não existe despesa com o ID informado--!>
+200 | As informações do evento foram retornadas
+404 | Evento inexistente
+
+---
+
+<!-- PUT - ATUALIZAR -->
+### Atualizar Evento
+
+`PUT` planiks/api/v1/evento/{id}
+
+**Exemplo de Resposta** 
+```js
+{
+    "evento": {
+    "eventoId": 1,
+    "newTitulo": "Prova",
+    "newTag": 1,
+    "newoPrazo": 07/03/2023,
+    "newCategoria": "Estudos",
+    "newComentario": "vale nota",
+    "newProgresso": 0
+    }
+}
+```
+
+**Códigos da Resposta**
+
+|código|descrição
+|-|-
+200 | Os dados do evento foram atualizados
+400 | Os novos dados são invalidos
+
+---
+
+<!-- DELETE - DELETAR -->
+### Deletar Evento
+
+`DELETE` planiks/api/v1/evento/{id}
+
+**Exemplo de Resposta** 
+```js
+{
+
+}
+```
+
+**Códigos da Resposta**
+
+|código|descrição
+|-|-
+200 | O evento foi deletado com sucesso
+400 | Evento inexistente
