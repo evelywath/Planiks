@@ -40,7 +40,7 @@
 
 **Códigos da Resposta**
 
-|código|descrição
+|Código|Descrição
 |-|-
 201 | O evento foi criado com sucesso
 400 | Os dados enviados são inválidos
@@ -68,7 +68,7 @@
 
 **Códigos da Resposta**
 
-|código|descrição
+|Código|Descrição
 |-|-
 200 | As informações do evento foram retornadas
 404 | Evento inexistente
@@ -96,7 +96,7 @@
 
 **Códigos da Resposta**
 
-|código|descrição
+|Código|Descrição
 |-|-
 200 | Os dados do evento foram atualizados
 400 | Os novos dados são inválidos
@@ -117,7 +117,7 @@
 
 **Códigos da Resposta**
 
-|código|descrição
+|Código|Descrição
 |-|-
 200 | O evento foi deletado com sucesso
 400 | Evento inexistente
@@ -142,7 +142,7 @@
 
 **Códigos da Resposta**
 
-|código|descrição
+|Código|Descrição
 |-|-
 200 | O dashboard foi carregado com sucesso
 400 | Ocorreu um erro ao carregar o Dashboard
@@ -168,7 +168,7 @@
 
 **Códigos da Resposta**
 
-|código|descrição
+|Código|Descrição
 |-|-
 200 | O calendário foi carregado com sucesso
 400 | Ocorreu um erro ao carregar o cálendario
