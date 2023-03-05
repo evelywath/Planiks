@@ -19,7 +19,7 @@
 {
     "eventoId": 1,
     "titulo": "Prova",
-    "tag": 1,
+    "tag": "#0000CD",
     "prazo": 07/03/2023,
     "categoria": "Estudos",
     "comentario": "vale nota",
@@ -30,19 +30,20 @@
 **Campos da Requisição**
 | Campo | Obrigatório | Tipo  | Descrição |
 |-------|:-------------:|-------|-----------|
-|id|sim|int| Numero de identificação do evento, serve como atributo unico do evento
-|titulo |sim            |String| Titulo do evento, pode conter qualquer caractere
-|tag    |sim            |int| Cor relacionada ao evento, tendo apenas uma seleção de cores pré definidas
-|prazo  |sim            |data| Um dia da semana em que o evento ira se finalizar ao enviar uma notificação
-|categoria|sim          |String| Uma categoria atrelada ao evento definido por uma seleção feita pelo usuario.
-|comentario|não         |texto| Uma descrição do evento com no maximo de 250 caracteres.
+|id|sim|int| Número de identificação do evento, serve como atributo único do evento
+|Título |sim            |String| Título do evento, pode conter qualquer caractére
+|Tag    |não            |int| Cor relacionada ao evento, tendo apenas uma seleção de cores pré definidas
+|Prazo  |não            |data| Um dia da semana em que o evento ira se finalizar ao enviar uma notificação
+|Categoria|não          |String| Uma categoria atrelada ao evento definido por uma seleção feita pelo usúario.
+|Comentário|não         |texto| Uma descrição do evento com no máximo de 250 caractéres.
+|Progresso|não         |float| Uma barra que registrará o progresso desejado em porcentagem até a conclusão.
 
 **Códigos da Resposta**
 
 |código|descrição
 |-|-
 201 | O evento foi criado com sucesso
-400 | os dados enviados são inválidos
+400 | Os dados enviados são inválidos
 
 ---
 
@@ -56,7 +57,7 @@
 {
     "evento": {
         "titulo": "Prova",
-        "tag": 1,
+        "tag": "#0000CD",
         "prazo": 07/03/2023,
         "categoria": "Estudos",
         "comentario": "vale nota",
@@ -84,7 +85,7 @@
 {
     "evento": {
         "newTitulo": "Prova",
-        "newTag": 1,
+        "newTag": "#DC143C",
         "newoPrazo": 07/03/2023,
         "newCategoria": "Estudos",
         "newComentario": "vale nota",
@@ -98,7 +99,7 @@
 |código|descrição
 |-|-
 200 | Os dados do evento foram atualizados
-400 | Os novos dados são invalidos
+400 | Os novos dados são inválidos
 
 ---
 
@@ -149,7 +150,7 @@
 ---
 
 <!-- Calendario -->
-### Calendario
+### Calendário
 
 `GET` planiks/api/v1/calendario/{id}
 
@@ -169,5 +170,5 @@
 
 |código|descrição
 |-|-
-200 | O calendario foi carregado com sucesso
-400 | Ocorreu um erro ao carregar o Calendario
+200 | O calendário foi carregado com sucesso
+400 | Ocorreu um erro ao carregar o cálendario
