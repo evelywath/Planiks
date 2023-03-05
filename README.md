@@ -130,7 +130,7 @@
 ```js
 {
     "dashboard": {
-        "todo": "",
+        "to-do": "",
         "projetos": "",
         "compromissos": ""
     }
