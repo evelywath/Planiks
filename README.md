@@ -101,9 +101,7 @@
 200 | Os dados do evento foram atualizados
 400 | Os novos dados são inválidos
 
----
 
-<!-- DELETE - DELETAR -->
 ### Deletar Evento
 
 `DELETE` planiks/api/v1/evento/{id}
@@ -122,7 +120,6 @@
 200 | O evento foi deletado com sucesso
 400 | Evento inexistente
 
----
 
 <!-- Dashboard -->
 ### Dashboard
@@ -147,7 +144,6 @@
 200 | O dashboard foi carregado com sucesso
 400 | Ocorreu um erro ao carregar o Dashboard
 
----
 
 <!-- Calendario -->
 ### Calendário
