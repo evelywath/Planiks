@@ -1,7 +1,7 @@
 # Planiks
 ## Endpoints 
 - [Dashboard](#dashboard)
-- [Calendario](#calendario)
+- [Calendário](#calendario)
 - [Criar evento](#criação-de-evento)
 - [Listar evento](#mostrar-evento)
 - [Alterar evento](#atualizar-evento)
