@@ -80,7 +80,8 @@
         "tag": 1,
         "categoria": "Estudos",
         "comentario": "vale nota",
-        "progresso": 0
+        "progresso": 0,
+        "estado": true
     },
     "prazo": {
         "diaComeco": 04/03/2023,
@@ -137,7 +138,8 @@
         "tag": 1,
         "categoria": "Estudos",
         "comentario": "vale nota",
-        "progresso": 0
+        "progresso": 0,
+        "estado": true
     },
     "prazo": {
         "diaComeco": 04/03/2023,
