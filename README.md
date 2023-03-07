@@ -42,10 +42,10 @@
 |-------|:-------------:|-------|-----------|
 |id|sim|int| Numero de identificação do evento, serve como atributo unico do evento. Oculto para o usuario.
 |titulo |sim            |String| Titulo do evento, pode conter qualquer caractere.
-|tag|sim |int| Cor relacionada ao evento, tendo apenas uma seleção de cores pré definidas.
-|categoria|sim          |String| Uma categoria atrelada ao evento definido por uma seleção feita pelo usuario.
-|comentario|não         |texto| Uma descrição do evento com no maximo de 250 caracteres.
-|progresso|sim|int| Um numero que representa completude do evento.
+|tag|não |String| Cor relacionada ao evento, tendo apenas uma seleção de cores pré definidas.
+|categoria|não          |String| Uma categoria atrelada ao evento definido por uma seleção feita pelo usuario.
+|comentario|não         |String| Uma descrição do evento com no maximo de 250 caracteres.
+|progresso|não|int| Um numero que representa completude do evento.
 |estado|sim|boolean| O estado do evento que sera atualizado de acordo com o prazo proposto pelo usuario. Oculto para o usuario.
 
 **Campos da Requisição Prazo**
@@ -99,10 +99,10 @@
 |-------|:-------------:|-------|-----------|
 |id|sim|int| Numero de identificação do evento, serve como atributo unico do evento. Oculto para o usuario.
 |titulo |sim            |String| Titulo do evento, pode conter qualquer caractere.
-|tag|sim |int| Cor relacionada ao evento, tendo apenas uma seleção de cores pré definidas.
-|categoria|sim          |String| Uma categoria atrelada ao evento definido por uma seleção feita pelo usuario.
-|comentario|não         |texto| Uma descrição do evento com no maximo de 250 caracteres.
-|progresso|sim|int| Um numero que representa completude do evento.
+|tag|não |String| Cor relacionada ao evento, tendo apenas uma seleção de cores pré definidas.
+|categoria|não          |String| Uma categoria atrelada ao evento definido por uma seleção feita pelo usuario.
+|comentario|não         |String| Uma descrição do evento com no maximo de 250 caracteres.
+|progresso|não|int| Um numero que representa completude do evento.
 |estado|sim|boolean| O estado do evento que sera atualizado de acordo com o prazo proposto pelo usuario. Oculto para o usuario.
 
 **Campos da Requisição Prazo**
@@ -157,10 +157,10 @@
 |-------|:-------------:|-------|-----------|
 |id|sim|int| Numero de identificação do evento, serve como atributo unico do evento. Oculto para o usuario.
 |titulo |sim            |String| Titulo do evento, pode conter qualquer caractere.
-|tag|sim |int| Cor relacionada ao evento, tendo apenas uma seleção de cores pré definidas.
-|categoria|sim          |String| Uma categoria atrelada ao evento definido por uma seleção feita pelo usuario.
-|comentario|não         |texto| Uma descrição do evento com no maximo de 250 caracteres.
-|progresso|sim|int| Um numero que representa completude do evento.
+|tag|não |String| Cor relacionada ao evento, tendo apenas uma seleção de cores pré definidas.
+|categoria|não          |String| Uma categoria atrelada ao evento definido por uma seleção feita pelo usuario.
+|comentario|não         |String| Uma descrição do evento com no maximo de 250 caracteres.
+|progresso|não|int| Um numero que representa completude do evento.
 |estado|sim|boolean| O estado do evento que sera atualizado de acordo com o prazo proposto pelo usuario. Oculto para o usuario.
 
 **Campos da Requisição Prazo**
