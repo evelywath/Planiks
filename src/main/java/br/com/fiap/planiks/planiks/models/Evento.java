@@ -1,5 +1,7 @@
 package br.com.fiap.planiks.planiks.models;
 
+import java.util.Optional;
+
 public class Evento {
     private int eventoId;
     private String titulo;
@@ -69,5 +71,8 @@ public class Evento {
                 + ", comentario=" + comentario + ", progresso=" + progresso + ", estado=" + estado + "]";
     }
 
-    
+    public void add(Evento evento) {
+    }
+
+
 }
