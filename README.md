@@ -1,7 +1,7 @@
 # Planiks
 ## Endpoints 
 - [Dashboard](#dashboard)
-- [Calendário](#calendario)
+- [Calendário](#calendário)
 - [Criar evento](#criação-de-evento)
 - [Detalhar evento](#detalhar-evento)
 - [Alterar evento](#atualizar-evento)
@@ -54,7 +54,7 @@
 |diaComeco |não|date| O dia inicial de um evento, caso não seja configurado quando o evento começará, será configurado no dia de criação do evento.
 |diaFim    |não|date| O dia final de um evento, caso não seja configurado quando o evento se finalizará, será atualizado no dia de quando o estado se der como false. Caso horasFim não seja configurado o estado do evento mudara para false ao mudar para o dia final.
 |horasComeco  |não|datetime| O horário em que um evento se inicializará.
-|horasFim  |não|datetime| O horário de finalização do evento, ao chegar no horário configurado o estado do evento se atualizara para false.
+|horasFim  |não|datetime| O horário de finalização do evento, ao chegar no horário configurado o estado do evento se atualizará para false.
 |fuso   |não|String| Fuso horário, se atualizará automaticamente de acordo com o local do usuário.
 
 **Códigos da Resposta**
@@ -111,7 +111,7 @@
 |diaComeco |não|date| O dia inicial de um evento, caso não seja configurado quando o evento começará, será configurado no dia de criação do evento.
 |diaFim    |não|date| O dia final de um evento, caso não seja configurado quando o evento se finalizará, será atualizado no dia de quando o estado se der como false. Caso horasFim não seja configurado o estado do evento mudara para false ao mudar para o dia final.
 |horasComeco  |não|datetime| O horário em que um evento se inicializará.
-|horasFim  |não|datetime| O horário de finalização do evento, ao chegar no horário configurado o estado do evento se atualizara para false.
+|horasFim  |não|datetime| O horário de finalização do evento, ao chegar no horário configurado o estado do evento se atualizará para false.
 |fuso   |não|String| Fuso horario, se atualizará automaticamente de acordo com o local do usuário.
 
 
@@ -167,10 +167,10 @@
 | Campo | Obrigatório | Tipo  | Descrição |
 |-------|:-------------:|-------|-----------|
 |diaComeco |não|date| O dia inicial de um evento, caso não seja configurado quando o evento começará, será configurado no dia de criação do evento.
-|diaFim    |não|date| O dia final de um evento, caso não seja configurado quando o evento se finalizará, será atualizado no dia de quando o estado se der como false. Caso horasFim não seja configurado o estado do evento mudara para false ao mudar para o dia final.
+|diaFim    |não|date| O dia final de um evento, caso não seja configurado quando o evento se finalizará, será atualizado no dia de quando o estado se der como false. Caso horasFim não seja configurado o estado do evento mudará para false ao mudar para o dia final.
 |horasComeco  |não|datetime| O horário em que um evento se inicializará.
-|horasFim  |não|datetime| O horário de finalização do evento, ao chegar no horario configurado o estado do evento se atualizara para false.
-|fuso   |não|String| Fuso horario, se atualizará automaticamente de acordo com o local do usuário.
+|horasFim  |não|datetime| O horário de finalização do evento, ao chegar no horario configurado o estado do evento se atualizará para false.
+|fuso   |não|String| Fuso horário, se atualizará automaticamente de acordo com o local do usuário.
 
 **Códigos da Resposta**
 
@@ -178,7 +178,7 @@
 |-|-
 200 | Os dados do evento foram atualizados.
 404 | Evento não encontrado.
-400 | Os novos dados são invalidos.
+400 | Os novos dados são inválidos.
 
 ---
 
@@ -242,7 +242,7 @@
 
 ---
 
-<!-- Calendario -->
+<!-- Calendário -->
 ### Calendário
 
 `GET` planiks/api/v1/calendario/{id}
