@@ -228,6 +228,7 @@
 | Campo | Obrigatório | Tipo  | Descrição |
 |-------|:-------------:|-------|-----------|
 |listaEventos    |sim|lista de eventos| Uma lista com os todos os eventos, sendo categorizados e mostrados de acordo com a configuração do evento feito pelo usuario.
+
 **Códigos da Resposta**
 
 |Código|Descrição
@@ -246,7 +247,7 @@
 ```js
 {
     "calendario": {
-        Calendar
+        Calendar(Calendar.getInstance());
     }
 }
 ```
