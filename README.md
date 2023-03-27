@@ -40,7 +40,7 @@
 **Campos da Requisição Evento**
 | Campo | Obrigatório | Tipo  | Descrição |
 |-------|:-------------:|-------|-----------|
-|id|sim|Long| Número de identificação do evento, serve como atributo único do evento. Oculto para o usuário.
+|eventoId|sim|Long| Número de identificação do evento, serve como atributo único do evento. Oculto para o usuário.
 |titulo |sim            |String| Título do evento, pode conter qualquer caractere.
 |tag|não |String| Cor relacionada ao evento, tendo apenas uma seleção de cores pré definidas.
 |categoria|não          |String| Uma categoria atrelada ao evento definido por uma seleção feita pelo usuário.
@@ -97,7 +97,7 @@
 **Campos da Requisição Evento**
 | Campo | Obrigatório | Tipo  | Descrição |
 |-------|:-------------:|-------|-----------|
-|id|sim|Long| Número de identificação do evento, serve como atributo único do evento. Oculto para o usúario.
+|eventoId|sim|Long| Número de identificação do evento, serve como atributo único do evento. Oculto para o usúario.
 |titulo |sim            |String| Título do evento, pode conter qualquer caractére.
 |tag|não |String| Cor relacionada ao evento, tendo apenas uma seleção de cores pré definidas.
 |categoria|não          |String| Uma categoria atrelada ao evento definido por uma seleção feita pelo usuário.
@@ -155,7 +155,7 @@
 **Campos da Requisição Evento**
 | Campo | Obrigatório | Tipo  | Descrição |
 |-------|:-------------:|-------|-----------|
-|id|sim|Long| Número de identificação do evento, serve como atributo único do evento. Oculto para o usuário.
+|eventoId|sim|Long| Número de identificação do evento, serve como atributo único do evento. Oculto para o usuário.
 |titulo |sim            |String| Título do evento, pode conter qualquer caractére.
 |tag|não |String| Cor relacionada ao evento, tendo apenas uma seleção de cores pré definidas.
 |categoria|não          |String| Uma categoria atrelada ao evento definido por uma seleção feita pelo usuário.
