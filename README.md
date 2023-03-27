@@ -40,12 +40,12 @@
 **Campos da Requisição Evento**
 | Campo | Obrigatório | Tipo  | Descrição |
 |-------|:-------------:|-------|-----------|
-|id|sim|int| Número de identificação do evento, serve como atributo único do evento. Oculto para o usuário.
+|id|sim|Long| Número de identificação do evento, serve como atributo único do evento. Oculto para o usuário.
 |titulo |sim            |String| Título do evento, pode conter qualquer caractere.
 |tag|não |String| Cor relacionada ao evento, tendo apenas uma seleção de cores pré definidas.
 |categoria|não          |String| Uma categoria atrelada ao evento definido por uma seleção feita pelo usuário.
 |comentario|não         |String| Uma descrição do evento com no máximo de 250 caractéres.
-|progresso|não|int| Um número que representa completude do evento.
+|progresso|não|Long| Um número que representa completude do evento.
 |estado|sim|boolean| O estado do evento que sera atualizado de acordo com o prazo proposto pelo usuário. Oculto para o usuário.
 
 **Campos da Requisição Prazo**
@@ -97,12 +97,12 @@
 **Campos da Requisição Evento**
 | Campo | Obrigatório | Tipo  | Descrição |
 |-------|:-------------:|-------|-----------|
-|id|sim|int| Número de identificação do evento, serve como atributo único do evento. Oculto para o usúario.
+|id|sim|Long| Número de identificação do evento, serve como atributo único do evento. Oculto para o usúario.
 |titulo |sim            |String| Título do evento, pode conter qualquer caractére.
 |tag|não |String| Cor relacionada ao evento, tendo apenas uma seleção de cores pré definidas.
 |categoria|não          |String| Uma categoria atrelada ao evento definido por uma seleção feita pelo usuário.
 |comentario|não         |String| Uma descrição do evento com no máximo de 250 caractéres.
-|progresso|não|int| Um número que representa completude do evento.
+|progresso|não|Long| Um número que representa completude do evento.
 |estado|sim|boolean| O estado do evento que sera atualizado de acordo com o prazo proposto pelo usuário. Oculto para o usuário.
 
 **Campos da Requisição Prazo**
@@ -155,12 +155,12 @@
 **Campos da Requisição Evento**
 | Campo | Obrigatório | Tipo  | Descrição |
 |-------|:-------------:|-------|-----------|
-|id|sim|int| Número de identificação do evento, serve como atributo único do evento. Oculto para o usuário.
+|id|sim|Long| Número de identificação do evento, serve como atributo único do evento. Oculto para o usuário.
 |titulo |sim            |String| Título do evento, pode conter qualquer caractére.
 |tag|não |String| Cor relacionada ao evento, tendo apenas uma seleção de cores pré definidas.
 |categoria|não          |String| Uma categoria atrelada ao evento definido por uma seleção feita pelo usuário.
 |comentario|não         |String| Uma descrição do evento com no máximo de 250 caractéres.
-|progresso|não|int| Um número que representa completude do evento.
+|progresso|não|Long| Um número que representa completude do evento.
 |estado|sim|boolean| O estado do evento que sera atualizado de acordo com o prazo proposto pelo usuário. Oculto para o usuário.
 
 **Campos da Requisição Prazo**
@@ -219,9 +219,7 @@
 ```js
 {
     "dashboard": {
-        "todo": [evento, evento, evento],
-        "projetos": [evento, evento],
-        "eventos": [evento, evento]
+        "listaEventos": [evento, evento, evento],
     }
 }
 ```
@@ -229,10 +227,7 @@
 **Campos da Requisição**
 | Campo | Obrigatório | Tipo  | Descrição |
 |-------|:-------------:|-------|-----------|
-|todo    |sim|array| Uma lista dos eventos mais próximos do dia ou hora de término.
-|projetos|sim|array| Uma lista dos eventos mais distantes do dia ou hora de término. A lista pode ser configurada pelo usuário de acordo com a categoria escolhida.
-|eventos |sim|array| Uma lista de eventos dentro do periodo de um mês apresentada em um calendário.
-
+|listaEventos    |sim|lista de eventos| Uma lista com os todos os eventos, sendo categorizados e mostrados de acordo com a configuração do evento feito pelo usuario.
 **Códigos da Resposta**
 
 |Código|Descrição
@@ -251,9 +246,7 @@
 ```js
 {
     "calendario": {
-        "dia": 07,
-        "mes": 03,
-        "ano": 2033
+        Calendar
     }
 }
 ```
@@ -261,9 +254,7 @@
 **Campos da Requisição**
 | Campo | Obrigatório | Tipo  | Descrição |
 |-------|:-------------:|-------|-----------|
-|dia|sim|int| O dia do calendário, pode conter um evento.
-|mes|sim|int| O mês do calendário.
-|ano|sim|int| O ano do calendário.
+|calendario|sim|Calendar| Um calendario com ano, mês e dia
  
 **Códigos da Resposta**
 
