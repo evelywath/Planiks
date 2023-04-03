@@ -10,7 +10,7 @@ import br.com.fiap.planiks.planiks.models.Calendario;
 @RestController
 public class CalendarioController {
     
-    @GetMapping("planiks/api/v1/prazo/{id}")
+    @GetMapping("/api/v1/calendario")
     public Calendario index(){
         return new Calendario(Calendar.getInstance());
     }
