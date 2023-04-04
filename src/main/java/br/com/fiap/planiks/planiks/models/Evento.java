@@ -46,9 +46,6 @@ public class Evento {
     //     this.prazo = prazo;
     // }
 
-   
-
-
     public Long getEventoId() {
         return eventoId;
     }

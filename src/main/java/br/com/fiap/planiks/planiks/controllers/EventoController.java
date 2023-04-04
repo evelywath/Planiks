@@ -19,9 +19,6 @@ import br.com.fiap.planiks.planiks.models.Evento;
 import br.com.fiap.planiks.planiks.repository.EventoRepository;
 import ch.qos.logback.classic.Logger;
 
-//Quadro de avisos:
-//- DELETE, GET (por id) e PUT não funcionais - Erro: Fala que o eventoId não existe/não esta presente.
-
 @RestController
 //@RequestMapping("/api/v1/evento")
 public class EventoController {
