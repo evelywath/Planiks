@@ -1,5 +1,7 @@
 package br.com.fiap.planiks.planiks.models;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,20 +21,13 @@ public class Evento {
     private Long progresso;
     private Boolean estado;
     //private Prazo prazo;
+    
+    //Por hora vamos colocar os atributos de prazo no evento
+    private LocalDateTime diaHora;
+    private String fuso;
 
     protected Evento() {
         
-    }
-
-    public Evento(Long eventoId, String titulo, String tag, String categoria, String comentario, Long progresso,
-    Boolean estado) {
-    this.eventoId = eventoId;
-    this.titulo = titulo;
-    this.tag = tag;
-    this.categoria = categoria;
-    this.comentario = comentario;
-    this.progresso = progresso;
-    this.estado = estado;
     }
 
     //Ver um metodo de fazer com que o prazo seja reconhecido como um JdbcType (provavelmente deve ter uma anotação pra isso)
@@ -45,6 +40,19 @@ public class Evento {
     // public void setPrazo(Prazo prazo) {
     //     this.prazo = prazo;
     // }
+
+    public Evento(Long eventoId, String titulo, String tag, String categoria, String comentario, Long progresso,
+            Boolean estado, LocalDateTime diaHora, String fuso) {
+        this.eventoId = eventoId;
+        this.titulo = titulo;
+        this.tag = tag;
+        this.categoria = categoria;
+        this.comentario = comentario;
+        this.progresso = progresso;
+        this.estado = estado;
+        this.diaHora = diaHora;
+        this.fuso = fuso;
+    }
 
     public Long getEventoId() {
         return eventoId;
@@ -102,12 +110,27 @@ public class Evento {
         this.estado = estado;
     }
 
+    public LocalDateTime getDiaHora() {
+        return diaHora;
+    }
+
+    public void setDiaHora(LocalDateTime diaHora) {
+        this.diaHora = diaHora;
+    }
+
+    public String getFuso() {
+        return fuso;
+    }
+
+    public void setFuso(String fuso) {
+        this.fuso = fuso;
+    }
+
     @Override
     public String toString() {
         return "Evento [eventoId=" + eventoId + ", titulo=" + titulo + ", tag=" + tag + ", categoria=" + categoria
-                + ", comentario=" + comentario + ", progresso=" + progresso + ", estado=" + estado + "]";
+                + ", comentario=" + comentario + ", progresso=" + progresso + ", estado=" + estado + ", diaHora="
+                + diaHora + ", fuso=" + fuso + "]";
     }
-
-
 
 }
