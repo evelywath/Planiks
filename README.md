@@ -51,10 +51,7 @@
 **Campos da Requisição Prazo**
 | Campo | Obrigatório | Tipo  | Descrição |
 |-------|:-------------:|-------|-----------|
-|diaComeco |não|date| O dia inicial de um evento, caso não seja configurado quando o evento começará, será configurado no dia de criação do evento.
-|diaFim    |não|date| O dia final de um evento, caso não seja configurado quando o evento se finalizará, será atualizado no dia de quando o estado se der como false. Caso horasFim não seja configurado o estado do evento mudara para false ao mudar para o dia final.
-|horasComeco  |não|datetime| O horário em que um evento se inicializará.
-|horasFim  |não|datetime| O horário de finalização do evento, ao chegar no horário configurado o estado do evento se atualizará para false.
+|diaHora|não|LocalDateTime| Dia e hora do dia selecionado.
 |fuso   |não|String| Fuso horário, se atualizará automaticamente de acordo com o local do usuário.
 
 **Códigos da Resposta**
@@ -108,12 +105,8 @@
 **Campos da Requisição Prazo**
 | Campo | Obrigatório | Tipo  | Descrição |
 |-------|:-------------:|-------|-----------|
-|diaComeco |não|date| O dia inicial de um evento, caso não seja configurado quando o evento começará, será configurado no dia de criação do evento.
-|diaFim    |não|date| O dia final de um evento, caso não seja configurado quando o evento se finalizará, será atualizado no dia de quando o estado se der como false. Caso horasFim não seja configurado o estado do evento mudara para false ao mudar para o dia final.
-|horasComeco  |não|datetime| O horário em que um evento se inicializará.
-|horasFim  |não|datetime| O horário de finalização do evento, ao chegar no horário configurado o estado do evento se atualizará para false.
-|fuso   |não|String| Fuso horario, se atualizará automaticamente de acordo com o local do usuário.
-
+|diaHora|não|LocalDateTime| Dia e hora do dia selecionado.
+|fuso   |não|String| Fuso horário, se atualizará automaticamente de acordo com o local do usuário.
 
 **Códigos da Resposta**
 
@@ -166,10 +159,7 @@
 **Campos da Requisição Prazo**
 | Campo | Obrigatório | Tipo  | Descrição |
 |-------|:-------------:|-------|-----------|
-|diaComeco |não|date| O dia inicial de um evento, caso não seja configurado quando o evento começará, será configurado no dia de criação do evento.
-|diaFim    |não|date| O dia final de um evento, caso não seja configurado quando o evento se finalizará, será atualizado no dia de quando o estado se der como false. Caso horasFim não seja configurado o estado do evento mudará para false ao mudar para o dia final.
-|horasComeco  |não|datetime| O horário em que um evento se inicializará.
-|horasFim  |não|datetime| O horário de finalização do evento, ao chegar no horario configurado o estado do evento se atualizará para false.
+|diaHora|não|LocalDateTime| Dia e hora do dia selecionado.
 |fuso   |não|String| Fuso horário, se atualizará automaticamente de acordo com o local do usuário.
 
 **Códigos da Resposta**
@@ -207,34 +197,6 @@
 |-|-
 200 | O evento foi deletado com sucesso.
 404 | Evento inexistente.
-
----
-
-<!-- Dashboard -->
-### Dashboard
-
-`GET` planiks/api/v1/dasboard/{id}
-
-**Exemplo de Resposta** 
-```js
-{
-    "dashboard": {
-        "listaEventos": [evento, evento, evento],
-    }
-}
-```
-
-**Campos da Requisição**
-| Campo | Obrigatório | Tipo  | Descrição |
-|-------|:-------------:|-------|-----------|
-|listaEventos    |sim|lista de eventos| Uma lista com os todos os eventos, sendo categorizados e mostrados de acordo com a configuração do evento feito pelo usuario.
-
-**Códigos da Resposta**
-
-|Código|Descrição
-|-|-
-200 | O dashboard foi carregado com sucesso.
-400 | Ocorreu um erro ao carregar o Dashboard.
 
 ---
 
