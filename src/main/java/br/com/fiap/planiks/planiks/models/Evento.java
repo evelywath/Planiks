@@ -6,6 +6,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Evento {
@@ -14,16 +19,29 @@ public class Evento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long eventoId;
     
+    @NotBlank
     private String titulo;
+
+    @NotBlank
     private String tag;
+
+    @NotBlank
     private String categoria;
+
+    @Size(min = 5, max = 255, message = "Deve ter pelo menos 1 caractere")
     private String comentario;
+
+    @NotNull @Min(value = 0)
     private Long progresso;
+
     private Boolean estado;
     //private Prazo prazo;
     
     //Por hora vamos colocar os atributos de prazo no evento
+    @FutureOrPresent
     private LocalDateTime diaHora;
+    
+    @NotNull
     private String fuso;
 
     protected Evento() {
