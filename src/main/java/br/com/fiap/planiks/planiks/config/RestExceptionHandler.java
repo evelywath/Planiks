@@ -6,11 +6,8 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
 import br.com.fiap.planiks.planiks.models.RestValidationError;
 import jakarta.validation.ConstraintViolationException;
-
-
 @RestControllerAdvice
 public class RestExceptionHandler {
 
