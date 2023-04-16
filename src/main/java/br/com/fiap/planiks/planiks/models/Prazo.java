@@ -2,26 +2,30 @@ package br.com.fiap.planiks.planiks.models;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+//import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 public class Prazo {
-   private LocalDateTime diaHora;
-   private String fuso;
 
-    public Prazo(LocalDateTime diaHora, String fuso) {
-        this.diaHora = diaHora;
-        this.fuso = fuso;
-    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long prazoId;
 
-    public LocalDateTime getDiaHora() {
-        return diaHora;
-    }
-    public void setDiaHora(LocalDateTime diaHora) {
-        this.diaHora = diaHora;
-    }
-    public String getFuso() {
-        return fuso;
-    }
-    public void setFuso(String fuso) {
-        this.fuso = fuso;
-    }
-   
+    @NotNull
+    private LocalDateTime diaHora;
+
+    @NotBlank
+    private String fuso;
 }
