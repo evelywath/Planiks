@@ -28,4 +28,8 @@ public class Prazo {
 
     @NotBlank
     private String fuso;
+
+    public static Object builder() {
+        return null;
+    }
 }

@@ -1,8 +1,10 @@
 package br.com.fiap.planiks.planiks.controllers;
 
-import java.util.List;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
+import org.springframework.data.domain.Page;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -12,19 +14,22 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import br.com.fiap.planiks.planiks.exception.RestNotFoundException;
 import br.com.fiap.planiks.planiks.models.Evento;
 import br.com.fiap.planiks.planiks.repository.EventoRepository;
 import br.com.fiap.planiks.planiks.repository.PrazoRepository;
-import ch.qos.logback.classic.Logger;
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
 //@RequestMapping("/api/v1/evento")
+@Slf4j
+
 public class EventoController {
     
-    Logger log = (Logger) LoggerFactory.getLogger(EventoController.class);
-
+    
     @Autowired
     EventoRepository eventoRepository;
 
@@ -32,9 +37,19 @@ public class EventoController {
     PrazoRepository prazoRepository;
 //------------------------------------------------------------------------------------------------------------------
     @GetMapping("/api/v1/dashboard")
-    public List<Evento> index(){
-        return eventoRepository.findAll();
-    }
+
+        public Page<Evento> index(@RequestParam(required = false) String
+        busca, @PageableDefault(size = 5) Pageable pageable) {
+            
+            if (busca == null) {
+                return EventoRepository.findAll(pageable); 
+            }
+            return eventoRepository.findByEventoIdContaining(busca,
+            pageable);
+            
+        }
+    
+    
 //------------------------------------------------------------------------------------------------------------------
     @PostMapping("/api/v1/evento")
     public ResponseEntity<Evento> create(@RequestBody @Valid Evento evento, BindingResult result){

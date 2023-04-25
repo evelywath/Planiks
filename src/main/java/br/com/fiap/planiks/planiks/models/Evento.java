@@ -10,14 +10,18 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @Entity
+@Builder
+
 public class Evento {
 
     @Id
@@ -33,7 +37,7 @@ public class Evento {
     @NotBlank
     private String categoria;
 
-    @NotBlank @Size(min = 5, max = 255, message = "Deve ter pelo menos 1 caractere")
+    @NotBlank @Size(min = 5, max = 255, message = "Deve ter pelo menos 1 caractére")
     private String comentario;
 
     @NotNull @Min(value = 0)
