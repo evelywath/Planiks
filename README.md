@@ -22,10 +22,11 @@
         "titulo": "Prova",
         "tag": 1,
         "categoria": "Estudos",
-        "comentario": "vale nota",
+        "comentario": "Vale nota",
         "progresso": 0,
         "estado": "true"
     },
+
     "prazo": {
         "diaComeco": 04/03/2023,
         "diaFim": 07/03/2023,
@@ -38,15 +39,16 @@
 ```
 
 **Campos da Requisição Evento**
+
 | Campo | Obrigatório | Tipo  | Descrição |
 |-------|:-------------:|-------|-----------|
 |eventoId|sim|Long| Número de identificação do evento, serve como atributo único do evento. Oculto para o usuário.
-|titulo |sim            |String| Título do evento, pode conter qualquer caractere.
+|titulo |sim            |String| Título do evento, pode conter qualquer caractére.
 |tag|não |String| Cor relacionada ao evento, tendo apenas uma seleção de cores pré definidas.
 |categoria|não          |String| Uma categoria atrelada ao evento definido por uma seleção feita pelo usuário.
 |comentario|não         |String| Uma descrição do evento com no máximo de 250 caractéres.
 |progresso|não|Long| Um número que representa completude do evento.
-|estado|sim|boolean| O estado do evento que sera atualizado de acordo com o prazo proposto pelo usuário. Oculto para o usuário.
+|estado|sim|boolean| O estado do evento que será atualizado de acordo com o prazo proposto pelo usuário. Oculto para o usuário.
 
 **Campos da Requisição Prazo**
 | Campo | Obrigatório | Tipo  | Descrição |
@@ -76,10 +78,11 @@
         "titulo": "Prova",
         "tag": 1,
         "categoria": "Estudos",
-        "comentario": "vale nota",
+        "comentario": "Vale nota",
         "progresso": 0,
         "estado": true
     },
+    
     "prazo": {
         "diaComeco": 04/03/2023,
         "diaFim": 07/03/2023,
@@ -130,10 +133,11 @@
         "titulo": "Prova2",
         "tag": 1,
         "categoria": "Estudos",
-        "comentario": "vale nota demais",
+        "comentario": "Vale nota + até 0.5 na       média",
         "progresso": 0,
         "estado": true
     },
+
     "prazo": {
         "diaComeco": 10/03/2023,
         "diaFim": 22/03/2023,
@@ -154,7 +158,7 @@
 |categoria|não          |String| Uma categoria atrelada ao evento definido por uma seleção feita pelo usuário.
 |comentario|não         |String| Uma descrição do evento com no máximo de 250 caractéres.
 |progresso|não|Long| Um número que representa completude do evento.
-|estado|sim|boolean| O estado do evento que sera atualizado de acordo com o prazo proposto pelo usuário. Oculto para o usuário.
+|estado|sim|boolean| O estado do evento que será atualizado de acordo com o prazo proposto pelo usuário. Oculto para o usuário.
 
 **Campos da Requisição Prazo**
 | Campo | Obrigatório | Tipo  | Descrição |
@@ -181,7 +185,7 @@
 ```js
 {
     "notificacao": {
-        "mensagem": "o evento foi excluido com sucesso"
+        "mensagem": "o evento foi excluído com sucesso"
     }
 }
 ```
@@ -217,7 +221,7 @@
 **Campos da Requisição**
 | Campo | Obrigatório | Tipo  | Descrição |
 |-------|:-------------:|-------|-----------|
-|calendario|sim|Calendar| Um calendario com ano, mês e dia
+|calendario|sim|Calendar| Um calendário com ano, mês e dia
  
 **Códigos da Resposta**
 
