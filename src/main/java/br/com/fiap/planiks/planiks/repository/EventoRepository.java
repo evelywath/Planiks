@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import br.com.fiap.planiks.planiks.models.Evento;
 
 public interface EventoRepository extends JpaRepository<Evento, Long>{
-    Page<Evento> findByEventoIdContaining(String busca, Pageable pageable);
+    Page<Evento> findByEventoIdContaining(String busca, org.springframework.data.domain.Pageable pageable);
 
     void saveAll(List<Object> of);
 

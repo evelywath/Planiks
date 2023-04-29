@@ -1,5 +1,10 @@
 package br.com.fiap.planiks.planiks.models;
 
+import org.springframework.hateoas.EntityModel;
+import org.springframework.data.domain.Pageable;
+
+import br.com.fiap.planiks.planiks.controllers.EventoController;
+import br.com.fiap.planiks.planiks.controllers.PrazoController;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,6 +19,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 @Data
 @NoArgsConstructor
@@ -47,5 +55,20 @@ public class Evento {
 
     @ManyToOne
     private Prazo prazo;
+
+    public EntityModel<Evento> toEntityModel() {
+
+        return EntityModel.of(
+            this,
+            
+            linkTo(methodOn(EventoController.class).show(eventoId)).withSelfRel(),
+            linkTo(methodOn(EventoController.class).destroy(eventoId)).withRel("delete"),
+                    linkTo(methodOn(EventoController.class).index(null, Pageable.unpaged())).withRel("all"),
+
+            linkTo(methodOn(PrazoController.class).show(this.getPrazo().getPrazoId())).withRel("prazo")
+
+            );
+
+    }
 
 }
