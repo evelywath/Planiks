@@ -13,7 +13,7 @@ public interface EventoRepository extends JpaRepository<Evento, Long>{
 
     void saveAll(List<Object> of);
 
-    static Page<Evento> findAll(Pageable pageable) {
+    static Page<Evento> findAll(org.springdoc.core.converters.models.Pageable pageable) {
         return null;
     }
 }

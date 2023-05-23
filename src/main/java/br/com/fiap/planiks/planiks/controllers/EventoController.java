@@ -1,6 +1,7 @@
 package br.com.fiap.planiks.planiks.controllers;
 
-
+import org.springdoc.core.annotations.ParameterObject;
+import org.springdoc.core.converters.models.Pageable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.web.PageableDefault;
@@ -24,10 +25,17 @@ import br.com.fiap.planiks.planiks.repository.EventoRepository;
 import br.com.fiap.planiks.planiks.repository.PrazoRepository;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/api/v1/evento")
 @Slf4j
+@SecurityRequirement(name = "bearer-key")
+@Tag(name = "despesa")
 
 public class EventoController {
 
@@ -42,12 +50,10 @@ public class EventoController {
 
 //------------------------------------------------------------------------------------------------------------------
     @GetMapping("/api/v1/dashboard")
-
-        public PagedModel<EntityModel<Object>> index(@RequestParam(required=
-        false) String busca, @PageableDefault(size = 5) org.springframework.data.domain.Pageable pageable) {
+    public PagedModel<EntityModel<Object>> index(@RequestParam(required = false) String busca, @ParameterObject @PageableDefault(size = 5) Pageable pageable) {
             var evento = (busca == null) ?
-                eventoRepository.findAll(pageable):
-                eventoRepository.findByEventoIdContaining(busca, pageable);
+                EventoRepository.findAll(pageable):
+                eventoRepository.findByEventoIdContaining(busca, (org.springframework.data.domain.Pageable) pageable);
 
                 return assembler.toModel((((Page<Evento>) evento).map(Evento::toEntityModel)));
 
@@ -56,6 +62,10 @@ public class EventoController {
 //------------------------------------------------------------------------------------------------------------------
     @PostMapping("/api/v1/evento")
 
+    @ApiResponses({
+        @ApiResponse(responseCode = "201", description = "Evento criado com sucesso!"),
+        @ApiResponse(responseCode = "400", description = "Descrição válida para criação do evento.")
+    })
     public ResponseEntity<EntityModel<Evento>> create(
         @RequestBody @Valid Evento evento, BindingResult result){
         log.info("Criando evento: " + evento);
@@ -70,6 +80,10 @@ public class EventoController {
     }
 //------------------------------------------------------------------------------------------------------------------
     @GetMapping("/api/v1/evento/{eventoId}")
+    @Operation(
+        summary = "Detalhes do evento",
+        description = "Retornar os dados do evento de acordo com o id informado no path"
+    )
     public EntityModel<Evento> show(@PathVariable Long eventoId){
         log.info("Procurando evento: " + eventoId);
         return getEvento(eventoId).toEntityModel();

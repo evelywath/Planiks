@@ -31,8 +31,8 @@ public class AuthorizationFilter extends OncePerRequestFilter  {
 
             
             if (token != null){
-                Usuario usuario = tokenService.getUserByToken(token);
-                Authentication auth = new UsernamePasswordAuthenticationToken(usuario.getEmail(), null, usuario.getAuthorities());
+                Usuario usuario = ((br.com.fiap.planiks.planiks.service.TokenService) tokenService).getUserByToken(token);
+                UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(usuario.getEmail(), null, usuario.getAuthorities());
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }
 

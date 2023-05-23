@@ -63,7 +63,7 @@ public class Evento {
             
             linkTo(methodOn(EventoController.class).show(eventoId)).withSelfRel(),
             linkTo(methodOn(EventoController.class).destroy(eventoId)).withRel("delete"),
-                    linkTo(methodOn(EventoController.class).index(null, Pageable.unpaged())).withRel("all"),
+                    linkTo(methodOn(EventoController.class).index(null, (org.springdoc.core.converters.models.Pageable) Pageable.unpaged())).withRel("all"),
 
             linkTo(methodOn(PrazoController.class).show(this.getPrazo().getPrazoId())).withRel("prazo")
 
