@@ -22,21 +22,17 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain (HttpSecurity http) throws Exception{
         return http
-        .authorizeHttpRequests()
-        .requestMatchers(HttpMethod.POST, "/api/registrar", "/api/login").permitAll()
-                    .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
-        .anyRequest().authenticated()
-    .and()
-    .csrf().disable()
-    .formLogin().disable()
-    .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-    .and()
-    .headers().frameOptions().sameOrigin()
-    .and()
-    .addFilterBefore(authorizationFilter, UsernamePasswordAuthenticationFilter.class)
-    .build();
-}
-
+                .authorizeHttpRequests()
+                .requestMatchers(HttpMethod.POST, "/api/registrar", "/api/login").permitAll()
+                .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .csrf(csrf -> csrf.disable())
+                .formLogin(login -> login.disable())
+                .sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .headers(headers -> headers.frameOptions(options -> options.sameOrigin()))
+                .addFilterBefore(authorizationFilter, UsernamePasswordAuthenticationFilter.class)
+                .build();
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception{
         return config.getAuthenticationManager();
