@@ -1,10 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import FormEvento from '@/components/FormEvento';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div style={styles.container}>
         <div style={styles.titleContainer}>
           <h1 style={styles.title}>Dashboard</h1>
@@ -13,10 +13,12 @@ function App() {
           <Link to="/form-evento">
             <button style={styles.addButton}>+</button>
           </Link>
-          <Route path="/form-evento" component={FormEvento} />
         </div>
+        <Routes>
+          <Route path="/form-evento" element={<FormEvento />} />
+        </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 

@@ -15,13 +15,8 @@ export default function FormEvento() {
       </div>
       <div style={styles.inputContainer}>
         <label htmlFor="tags" style={styles.label}>
-          Tags:
+          Tags: *CORES*
         </label>
-        <input
-          type="checkbox"
-          id="tags"
-          style={styles.checkbox}
-        />
       </div>
       <div style={styles.inputContainer}>
         <label htmlFor="prazo" style={styles.label}>
